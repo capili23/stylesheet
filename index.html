@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Layout Toggle</title>
+  <link id="pagestyle" rel="stylesheet" href="style1.css">
+  <style>
+    .sidebar-box {
+  background-color: #e1e1e1;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  margin: 40px 0 20px 0; 
+  width: 100%;
+  box-sizing: border-box;
+     }
+    .sidebar-box p {
+      margin-bottom: 15px;
+    }
+    .button-container {
+      margin-top: 20px;
+    }
+
+    .header h1 {
+      margin-bottom: 10px;
+    }
+
+    .footer {
+      margin-top: 20px;
+    }
+    .additional-text {
+      margin-top: 20px;
+      font-style: italic;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Welcome to My Homepage</h1>
+    <p>Use the menu to change stylesheet</p> 
+  </div>
+
+  <div class="button-container">
+    <button onclick="setStyle('style1.css')">Style 1</button>
+    <button onclick="setStyle('style2.css')">Style 2</button>
+  </div>
+
+  <div class="container">
+    <section class="row">
+      <div class="box">
+        <h2>Stylesheet 1</h2>
+        <p>This is a demonstration of how different stylesheets can change the layout of your HTML page. You can change the layout of this page by selecting different stylesheets in the menu.</p>
+        <p><a href="#" onclick="setStyle('style1.css')">Stylesheet 1</a> | <a href="#" onclick="setStyle('style2.css')">Stylesheet 2</a></p>
+        <p>Click on the buttons above to switch between different layouts and see how the page appearance changes!</p>
+      </div>
+      <div class="box">
+        <h2>No Stylesheet</h2>
+        <p>Click here to see how the page looks like with no stylesheet:</p>
+        <p><a href="#" onclick="setStyle('')">No Stylesheet</a></p> 
+        <p>This page uses DIV elements to group different sections of the HTML page. Try viewing this page without any stylesheet applied to see the raw structure of the content.</p>
+      </div>
+    </section>
+    <div class="sidebar-box">
+      <p>Side-Bar</p>
+      <p>Ah, Judge Holden! People often describe him in *Blood Meridian* as a terrifying and almost otherworldly figure. He’s the kind of character who’s both philosophically complex and completely chilling. Many editors and scholars focus on his almost godlike presence, using phrases like “the embodiment of violence” or “the representation of evil in its purest form.” Some say he's the perfect antihero, though he’s more of a chaotic force, leaving destruction in his wake.</p>
+    </div>
+    <div class="additional-text">
+      <p>So, in short, Judge Holden is typically explained as a kind of unstoppable, godlike force of violence and chaos, making him fascinating for people to explore in edits and memes. It's wild how people can romanticize a character who's basically an incarnation of destruction!</p>
+    </div>
+  </div>
+
+  <script>
+    function setStyle(sheet) {
+      if (sheet === '') {
+        document.getElementById('pagestyle').setAttribute('href', '');
+      } else {
+        document.getElementById('pagestyle').setAttribute('href', sheet);
+      }
+    }
+  </script>
+</body>
+</html>
